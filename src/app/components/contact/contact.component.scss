@@ -1,0 +1,6 @@
+@import '../../styles/mixins.scss';
+
+.outro-screen {
+  height: 100vh;
+  @include align-center;
+}
