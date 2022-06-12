@@ -1,0 +1,6 @@
+@import '../../styles/mixins.scss';
+
+.intro-screen {
+  height: 100vh;
+  @include align-center;
+}
