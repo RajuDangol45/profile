@@ -1,6 +1,65 @@
-@import '../../styles/mixins.scss';
+@import "../../styles/mixins.scss";
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 470px;
+    border: none;
+  }
+}
+
+@keyframes typing-position {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    width: 225px;
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: grey;
+  }
+}
 
 .intro-screen {
   height: 100vh;
-  @include align-center;
+  display: grid;
+  gap: 16px;
+
+  .name {
+    font-size: 6em;
+    animation: typing 2s steps(11), blink-caret 0.5s step-end infinite;
+    border-right: 0.08em solid grey;
+    align-self: end;
+  }
+
+  .position {
+    opacity: 0;
+    font-size: 24px;
+    border-right: 0.15em solid grey;
+    animation: typing-position 2s steps(18), blink-caret 1s step-end infinite;
+    animation-delay: 4s;
+    align-self: start;
+  }
+
+  .name,
+  .position {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation-fill-mode: forwards;
+    height: fit-content;
+  }
 }
