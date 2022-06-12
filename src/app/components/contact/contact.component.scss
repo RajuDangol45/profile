@@ -1,6 +1,87 @@
 @import '../../styles/mixins.scss';
 
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes increase-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .outro-screen {
   height: 100vh;
   @include align-center;
+
+  .title {
+    position: absolute;
+    font-size: 4em;
+    top: 40%;
+    left: 20%;
+
+    &.show {
+      animation: slide-in-left 1s ease-in-out both;
+    }
+  }
+
+  .socials {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 4em;
+    margin-right: 20%;
+
+    a {
+      font-size: 3em;
+      cursor: pointer;
+      padding: 4px;
+      color: inherit;
+
+      &.show {
+        animation: increase-opacity 2s ease-in-out both;
+      }
+
+      &:hover {
+        transform: scale(1.5);
+      }
+
+      &.linkedin {
+          &:hover {
+          color: #0077B5;
+        }
+      }
+
+      &.envelope {
+          animation-delay: 0.5s;
+          &:hover {
+          color: #34a853;
+        }
+      }
+
+      &.github {
+          animation-delay: 1s;
+          &:hover {
+          color: #211f1f;
+        }
+      }
+
+      &.stack-overflow {
+          animation-delay: 1.5s;
+          &:hover {
+          color: #f48024;
+        }
+      }
+    }
+  }
 }
