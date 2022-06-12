@@ -11,20 +11,13 @@ body {
   font-size: 14px;
   background-color: #fefefe;
   
-  .parallax-wrapper {
+  .wrapper {
     overflow-y: auto;
     overflow-x: hidden;
-    perspective: 500px;
   }
 
-  .parallax-group {
+  .group {
     position: relative;
     height: 100vh;
-    transform-style: preserve-3d;
-
-    .parallax-layer {
-      position: absolute;
-      inset: 0;
-    }
   }
 }
