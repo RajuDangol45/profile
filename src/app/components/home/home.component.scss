@@ -40,7 +40,7 @@
 
   .name {
     font-size: 6em;
-    animation: typing 2s steps(11), blink-caret 0.5s step-end infinite;
+    animation: typing 2s steps(18), blink-caret 0.5s step-end infinite;
     border-right: 0.08em solid grey;
     align-self: end;
   }
@@ -50,7 +50,7 @@
     font-size: 24px;
     border-right: 0.15em solid grey;
     animation: typing-position 2s steps(18), blink-caret 1s step-end infinite;
-    animation-delay: 4s;
+    animation-delay: 3s;
     align-self: start;
   }
 
