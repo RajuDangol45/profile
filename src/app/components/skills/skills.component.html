@@ -1,1 +1,11 @@
-<p>skills works!</p>
+<div class="group skills-screen">
+  <p class="title">SKILLS</p>
+  <div class="skills">
+    <div class="skill" *ngFor="let skill of skills">
+      <p>{{skill.name}}</p>
+      <div class="rating">
+        <i class="fa fa-star" aria-hidden="true" *ngFor="let rating of [1,2,3,4,5]" [class.shining]="skill.rating >= rating"></i>
+      </div>
+    </div>
+  </div>
+</div>
