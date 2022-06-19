@@ -1,0 +1,112 @@
+@import '../../styles/mixins.scss';
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes increase-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes increase-star-opacity {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-star {
+  0% {
+    transform: rotateX(45deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+.skills-screen {
+  height: 100vh;
+  @include align-center;
+
+  .title {
+    position: absolute;
+    font-size: 4em;
+    top: 40%;
+    left: 20%;
+
+    &.show {
+      animation: slide-in-left 1s ease-in-out both;
+    }
+  }
+
+  .skills {
+    position: absolute;
+    top: 36%;
+    right: 20%;
+
+    .skill {
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 1.4em;
+      transition: all 150ms;
+
+      &.show {
+        animation: increase-opacity 2s ease-in-out both;
+
+        .shining {
+          animation: increase-star-opacity 1s linear both, rotate-star 1s linear both;
+          transform-origin: center bottom;
+
+          &:nth-child(1) {
+            animation-delay: 1s;
+          }
+
+          &:nth-child(2) {
+            animation-delay: 2s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: 3s;
+          }
+
+          &:nth-child(4) {
+            animation-delay: 4s;
+          }
+
+          &:nth-child(5) {
+            animation-delay: 5s;
+          }
+        }
+      }
+
+      p {
+        min-width: 150px;
+      }
+
+      .rating {
+        color: lighten($color: orange, $amount: 10);
+
+        i {
+          opacity: 0.2;
+          transform: rotateX(45deg);
+        }
+      }
+    }
+  }
+}
